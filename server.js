@@ -9,7 +9,7 @@ const passport = require('passport')
 const flash = require('express-flash')
 const session = require('express-session')
 const bodyParser=require("body-parser");
-// const methodOverride = require('method-override');
+const methodOverride = require('method-override');
 
 const initializePassport = require('./passport-config')
 initializePassport(
@@ -80,7 +80,7 @@ function checkAuthenticated(req, res, next) {
     return next()
   }
 
-  res.redirect('/login')
+  res.redirect('/login') //terminating the flow
 }
 
 function checkNotAuthenticated(req, res, next) {
